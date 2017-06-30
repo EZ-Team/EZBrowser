@@ -1,0 +1,3 @@
+FROM postgres
+ENV POSTGRES_PASSWORD=ezbrowser
+EXPOSE 5432
