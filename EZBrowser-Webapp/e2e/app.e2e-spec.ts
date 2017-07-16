@@ -1,10 +1,10 @@
-import { EZBrowserWebappPage } from './app.po';
+import { EZBrowserPage } from './app.po';
 
-describe('ezbrowser-webapp App', () => {
-  let page: EZBrowserWebappPage;
+describe('ez-browser App', () => {
+  let page: EZBrowserPage;
 
   beforeEach(() => {
-    page = new EZBrowserWebappPage();
+    page = new EZBrowserPage();
   });
 
   it('should display message saying app works', () => {

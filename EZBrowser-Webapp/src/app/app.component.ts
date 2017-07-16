@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'body',
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
-  title = 'app works!';
+
+  constructor(private translate: TranslateService) {
+
+    translate.setDefaultLang('fr');
+    translate.use('fr');
+  }
 }
