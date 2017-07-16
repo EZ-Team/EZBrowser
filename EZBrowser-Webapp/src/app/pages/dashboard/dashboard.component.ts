@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from '../shared/sidebar/sidebar.service';
+import { SidebarService } from '../../shared/sidebar/sidebar.service';
 
 @Component({
   templateUrl: './dashboard.component.html'
