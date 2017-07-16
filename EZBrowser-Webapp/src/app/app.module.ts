@@ -19,7 +19,6 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {SidebarService} from './shared/sidebar/sidebar.service';
-import { ProjectsComponent } from './projects/projects.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -49,8 +48,7 @@ export function HttpLoaderFactory(http: Http) {
     NAV_DROPDOWN_DIRECTIVES,
     SIDEBAR_TOGGLE_DIRECTIVES,
     LayoutComponent,
-    DashboardComponent,
-    ProjectsComponent
+    DashboardComponent
   ],
   providers: [{
     provide: LocationStrategy,
