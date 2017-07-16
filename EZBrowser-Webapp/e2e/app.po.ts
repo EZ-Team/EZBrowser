@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class EZBeowserPage {
+export class EZBrowserPage {
   navigateTo() {
     return browser.get('/');
   }
