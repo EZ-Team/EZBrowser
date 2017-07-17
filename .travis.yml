@@ -23,7 +23,7 @@ before_install:
 
 script:
   - cd EZBrowser-Backapp && ./gradlew build
-  -cd ../
+  - cd ..
   - cd EZBrowser-Webapp && npm install
   - npm run build
   - cd ..
