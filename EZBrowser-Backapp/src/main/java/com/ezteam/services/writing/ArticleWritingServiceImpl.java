@@ -21,4 +21,14 @@ public class ArticleWritingServiceImpl implements ArticleWritingService {
     public void createArticle(Article article) {
         articleWritingRepository.save(article);
     }
+
+    @Override
+    public void updateArticle(Article article) {
+        articleWritingRepository.save(article);
+    }
+
+    @Override
+    public void deleteArticle(Long id) {
+        articleWritingRepository.delete(id);
+    }
 }

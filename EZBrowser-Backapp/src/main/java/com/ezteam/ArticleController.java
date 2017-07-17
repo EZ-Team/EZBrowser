@@ -11,6 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/search")
@@ -37,5 +39,23 @@ public class ArticleController {
         } catch (Exception e) {
             throw new CreationFailedException();
         }
+    }
+
+    @PutMapping
+    public void updateArticle(@RequestBody @Valid ArticleDTO articleDTO, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            throw new CreationFailedException();
+        }
+
+        try {
+            articleWritingService.updateArticle(articleAdapter.toArticle(articleDTO));
+        } catch (Exception e) {
+            throw new CreationFailedException();
+        }
+    }
+
+    @DeleteMapping
+    public void deleteArticle(Long id){
+        articleWritingService.deleteArticle(id);
     }
 }
