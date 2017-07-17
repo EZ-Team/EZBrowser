@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
-class ArticleReadingServiceImpl implements ArticleReadingService{
+public class ArticleReadingServiceImpl implements ArticleReadingService{
 
     private final ArticleReadingRepository articleReadingRepository;
     private final ArticleAdapter articleAdapter;
