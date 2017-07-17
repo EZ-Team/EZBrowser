@@ -20,21 +20,21 @@ public class Browser {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
-    private Long Id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "Title")
-    private String Title;
+    @Column(name = "title")
+    private String title;
 
-    @Column(name = "Author")
-    private String Author;
+    @Column(name = "author")
+    private String author;
 
-    @Column(name = "Date")
-    private Date Date;
+    @Column(name = "date")
+    private Date date;
 
-    @Column(name = "Keyword")
-    private String Keyword;
+    @Column(name = "keyword")
+    private String keyword;
 
-    @Column(name = "Url")
-    private String Url;
+    @Column(name = "url")
+    private String url;
 }

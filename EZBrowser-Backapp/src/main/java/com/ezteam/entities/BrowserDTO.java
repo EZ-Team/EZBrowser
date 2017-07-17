@@ -16,15 +16,15 @@ import java.util.Date;
 
 public class BrowserDTO {
 
-        private Long Id;
+        private Long id;
 
-        private String Title;
+        private String title;
 
-        private String Author;
+        private String author;
 
-        private Date Date;
+        private Date date;
 
-        private String Keyword;
+        private String keyword;
 
-        private String Url;
+        private String url;
 }
