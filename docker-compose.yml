@@ -1,17 +1,17 @@
 version: "3"
 
 services:
-  database:
-    image: ezteam/mysql
+  mysql:
+    image: ezbrowser/mysql:latest
     ports:
     - "3306:3006"
 
-  api-server:
-    image: ezteam/back-app
+  backapp:
+    image: ezbrowser/backapp:latest
     ports:
     - "8080:8080"
 
-  web-app:
-    build: ezteam/web-app
+  webapp:
+    image: ezbrowser/webapp:latest
     ports:
     - "80:80"
