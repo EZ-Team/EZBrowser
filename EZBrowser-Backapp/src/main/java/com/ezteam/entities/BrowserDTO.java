@@ -1,4 +1,4 @@
-package com.ezteam.controller;
+package com.ezteam.entities;
 
 import lombok.*;
 

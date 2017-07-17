@@ -1,6 +1,5 @@
-package com.ezteam;
+package com.ezteam.entities;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "t_browser")
-public class BrowserEntity {
+public class Browser {
 
     @Id
     @GeneratedValue
