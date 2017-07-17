@@ -2,16 +2,16 @@ version: "3"
 
 services:
   database:
-    build: ./mysql
+    image: ezteam/mysql
     ports:
     - "3306:3006"
 
   api-server:
-    build: ./EZStudioApi
+    image: ezteam/back-app
     ports:
     - "8080:8080"
 
   web-app:
-    build: ./EZbrowser-Webapp
+    build: ezteam/web-app
     ports:
     - "80:80"

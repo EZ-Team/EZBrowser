@@ -1,0 +1,51 @@
+sudo: required
+
+services:
+  - docker
+
+language: java
+jdk: oraclejdk8
+
+env:
+  - TRAVIS_NODE_VERSION="6.11.0"
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - sudo service docker stop
+  - sudo sed -i "s/ExecStart=\/usr\/bin\/dockerd -H fd:\/\//ExecStart=\/usr\/bin\/dockerd -H fd:\/\/ -H tcp:\/\/0.0.0.0:2375 -H unix:\/\/\/var\/run\/docker.sock/g"  /lib/systemd/system/docker.service
+  - sudo service docker start
+  - chmod +x gradlew
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install -g @angular/cli
+
+script:
+  - cd EZBrowser-Backapp && ./gradlew build
+  -cd ../
+  - cd EZBrowser-Webapp && npm install
+  - npm run build
+  - cd ..
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+
+    docker build -t ezbrowser/mysql ./mysql;
+    docker push ezbrowser/database;
+
+    docker build -t ezbrowser/EZBrowser-Webapp:latest ./EZBrowser-Webapp;
+    docker push travelci/front-app;
+
+    docker build -t ezbrowser/EZBrowser-Backapp:latest ./EZBrowser-Backapp;
+    docker push ezbrowser/back-app;
+    fi
