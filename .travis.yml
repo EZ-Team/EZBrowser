@@ -17,7 +17,7 @@ before_install:
   - sudo service docker stop
   - sudo sed -i "s/ExecStart=\/usr\/bin\/dockerd -H fd:\/\//ExecStart=\/usr\/bin\/dockerd -H fd:\/\/ -H tcp:\/\/0.0.0.0:2375 -H unix:\/\/\/var\/run\/docker.sock/g"  /lib/systemd/system/docker.service
   - sudo service docker start
-  - chmod +x gradlew
+  - chmod +x EZBrowser-Backapp/gradlew
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
   - npm install -g @angular/cli
 
