@@ -43,9 +43,9 @@ after_success:
     docker build -t ezbrowser/mysql ./mysql;
     docker push ezbrowser/mysql;
 
-    docker build -t ezbrowser/EZBrowser-Webapp:latest ./EZBrowser-Webapp;
-    docker push ezbrowser/EZBrowser-Webapp;
+    docker build -t ezbrowser/webapp:latest ./EZBrowser-Webapp;
+    docker push ezbrowser/webapp;
 
-    docker build -t ezbrowser/EZBrowser-Backapp:latest ./EZBrowser-Backapp;
-    docker push ezbrowser/EZBrowser-Backapp;
+    docker build -t ezbrowser/backapp:latest ./EZBrowser-Backapp;
+    docker push ezbrowser/backapp;
     fi
