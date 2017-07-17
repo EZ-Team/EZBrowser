@@ -5,5 +5,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/search")
-public class BrowserController {
+public class ArticleController {
 }

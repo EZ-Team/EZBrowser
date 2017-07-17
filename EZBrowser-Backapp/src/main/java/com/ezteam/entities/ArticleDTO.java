@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 
-public class BrowserDTO {
+public class ArticleDTO {
 
         private Long id;
 

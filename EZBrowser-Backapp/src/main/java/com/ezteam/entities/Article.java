@@ -15,8 +15,8 @@ import java.util.Date;
 @Setter
 
 @Entity
-@Table(name = "t_browser")
-public class Browser {
+@Table(name = "t_article")
+public class Article {
 
     @Id
     @GeneratedValue
