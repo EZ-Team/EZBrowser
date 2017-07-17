@@ -41,11 +41,11 @@ after_success:
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
 
     docker build -t ezbrowser/mysql ./mysql;
-    docker push ezbrowser/database;
+    docker push ezteam/database;
 
     docker build -t ezbrowser/EZBrowser-Webapp:latest ./EZBrowser-Webapp;
-    docker push travelci/front-app;
+    docker push ezteam/front-app;
 
     docker build -t ezbrowser/EZBrowser-Backapp:latest ./EZBrowser-Backapp;
-    docker push ezbrowser/back-app;
+    docker push ezteam/back-app;
     fi
