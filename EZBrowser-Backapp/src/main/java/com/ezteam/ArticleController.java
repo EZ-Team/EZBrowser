@@ -27,7 +27,7 @@ public class ArticleController {
         this.articleReadingService = articleReadingService;
         this.articleAdapter = new ArticleAdapter();
     }
-
+s
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createArticle(@RequestBody @Valid ArticleDTO articleDTO, BindingResult bindingResult){
