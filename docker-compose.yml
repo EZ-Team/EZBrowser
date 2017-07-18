@@ -4,7 +4,7 @@ services:
   mysql:
     image: ezbrowser/mysql:latest
     ports:
-    - "3306:3006"
+    - "3306:3306"
     
   backapp:
     image: ezbrowser/backapp:latest
