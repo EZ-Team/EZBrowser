@@ -7,7 +7,7 @@ while [ "$ERROR_CODE" != "0" ]
 do
     sleep 1
     echo "Waiting Database"
-    curl -f http://mysql:3306/ezbase
+    curl -f http://localhost:3306/ezbase
     ERROR_CODE=$?
 done
 

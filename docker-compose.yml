@@ -5,12 +5,11 @@ services:
     image: ezbrowser/mysql:latest
     ports:
     - "3306:3006"
-
+    
   backapp:
     image: ezbrowser/backapp:latest
     ports:
     - "8080:8080"
-
   webapp:
     image: ezbrowser/webapp:latest
     ports:
